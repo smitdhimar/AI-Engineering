@@ -1,0 +1,20 @@
+{
+  "host": "http://127.0.0.1:11434",
+  "model": "qwen3.5:9b",
+
+  "system": "You are a terse assistant. Answer in one sentence. You are connected with chat.json which stores the communication history and you get the list of communication happened for historyu purposes ",
+  "system_role": "system",
+  "role": "user",
+
+  "temperature": 1,
+  "top_p": null,
+  "num_predict": null,
+  "seed": null,
+
+  "think": false,
+  "stream": true,
+  "timeout": 300,
+
+  "history": []
+}
+    
