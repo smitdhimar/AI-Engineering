@@ -631,6 +631,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     payload = config.build_payload(config.build_messages(prompt))
+    payload["format"] = "json";
     if args.show_payload:
         print(json.dumps(payload, indent=2, ensure_ascii=False))
         print()

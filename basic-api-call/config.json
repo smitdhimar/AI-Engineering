@@ -2,7 +2,7 @@
   "host": "http://127.0.0.1:11434",
   "model": "qwen3.5:9b",
 
-  "system": "You are a terse assistant. Answer in one sentence. You are connected with chat.json which stores the communication history and you get the list of communication happened for historyu purposes ",
+  "system": "You are a assistant which returns details of an employee. for now you should return dummy json response of employee containing this details. ( id, email, name, department). You must return employee information only any other information ask by user should be returned with json having error_message:( FAILED, INVALID or NOT_FOUND ) and error: standard HTTP error codes.( eg. 404, 429, 504 etc)",
   "system_role": "system",
   "role": "user",
 
@@ -17,4 +17,3 @@
 
   "history": []
 }
-    
