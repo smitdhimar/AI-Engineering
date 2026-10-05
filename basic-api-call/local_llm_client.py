@@ -180,7 +180,7 @@ def call_llm(config: ChatConfig, payload: dict) -> dict:
 def _consume_json(
     request: urllib.request.Request, start: float, timeout: float, host: str
 ) -> dict:
-    """Non-streaming path: one JSON body, full latency, exact token counts."""E
+    """Non-streaming path: one JSON body, full latency, exact token counts."""
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             data = json.loads(response.read().decode("utf-8"))
