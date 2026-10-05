@@ -180,10 +180,11 @@ def call_llm(config: ChatConfig, payload: dict) -> dict:
 def _consume_json(
     request: urllib.request.Request, start: float, timeout: float, host: str
 ) -> dict:
-    """Non-streaming path: one JSON body, full latency, exact token counts."""
+    """Non-streaming path: one JSON body, full latency, exact token counts."""E
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             data = json.loads(response.read().decode("utf-8"))
+            print(data)
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", "replace")
         raise ApiError(exc.code, body, _model_hint() if exc.code == 404 else None) from exc
