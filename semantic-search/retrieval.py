@@ -1,13 +1,9 @@
 # imports
 from qdrant_client import QdrantClient
-from constants import voyageApiKey, VOYAGE_EMBEDDING_MODEL, VOYAGE_EMBEDDINGS_URL
+from constants import COLLECTION_NAME, DB_PATH, voyageApiKey, VOYAGE_EMBEDDING_MODEL, VOYAGE_EMBEDDINGS_URL
 import json
 import urllib.request
 import urllib.error
-
-# must match the collection created in storeProducts.py
-COLLECTION_NAME = "products"
-DB_PATH = "./semantic-search/vector_local_db"
 
 # open the local vector db
 def initializeQdrantClient():

@@ -1,13 +1,10 @@
 # imports
 from qdrant_client import QdrantClient, models;
-from constants import keysToRemove, voyageApiKey, VOYAGE_EMBEDDING_MODEL, VOYAGE_EMBEDDINGS_URL
+from constants import COLLECTION_NAME, VECTOR_SIZE, DB_PATHkeysToRemove, voyageApiKey, VOYAGE_EMBEDDING_MODEL, VOYAGE_EMBEDDINGS_URL
 from uuid import uuid5, NAMESPACE_URL
 import json
 import urllib.request
 import urllib.error
-
-COLLECTION_NAME = "products"
-VECTOR_SIZE = 1024 
 
 # drop unncessory data
 def dropDetailsOfProducts(products):
@@ -22,7 +19,7 @@ def dropDetailsOfProducts(products):
 
 # initialize quadrant local vector db
 def initializeQudrantClient():
-    return QdrantClient(path="./semantic-search/vector_local_db");
+    return QdrantClient(path=DB_PATH);
 
 # read data from products.json
 def getJsonData():
